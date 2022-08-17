@@ -20,7 +20,7 @@ let getRepoName = function () {
 };
 
 let getRepoIssues = function (repo) {
-  console.log(repo);
+  // console.log(repo);
   let apiUrl = "https://api.github.com/repos/" + repo + "/issues?direction=asc";
 
   fetch(apiUrl).then(function (response) {
@@ -81,8 +81,9 @@ let displayWarning = function (repo) {
   limitWarningEl.textContent = "To see more than 30 issues, visit ";
 
   let linkEl = document.createElement("a");
-  linkEl.textContent = "See More Issues on GitHub.com";
+  linkEl.textContent = "GitHub.com";
   linkEl.setAttribute = ("href", "https://github.com/" + repo + "/issues");
+  linkEl.setAttribute("target", "_blank");
 
   // appen to container
   limitWarningEl.appendChild(linkEl);
